@@ -36,7 +36,7 @@ job%:
 
       # Update plot after each iteration
       # WARNING: For performance reasons, this should be removed or set to true in production!
-      buffer_curves: false
+      buffer_curves: true
 
   # Specify outputs. Since we are overriding the settings for the
   # UnmaskingCurvePlotter, we can't inherit from the default config
