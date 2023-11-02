@@ -30,11 +30,11 @@ number, file_path = parse_command_line()
 path = os.path.dirname(file_path)
 
 file_base = file_path
-file_truth = os.path.dirname(file_path)[:-6] + '-truth.jsonl'
+file_truth = os.path.dirname(file_path) + '-truth.jsonl'
 line_count = count_lines(file_truth)
 
 
-samplesize = 5000
+samplesize = number
 
 if samplesize > line_count:
     print("You requested more lines than there are in the file.")
