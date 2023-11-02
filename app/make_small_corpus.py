@@ -30,7 +30,7 @@ number, file_path = parse_command_line()
 path = os.path.dirname(file_path)
 
 file_base = file_path
-file_truth = os.path.dirname(file_path) + '-truth.jsonl'
+file_truth = file_base[:-6] + '-truth.jsonl'
 line_count = count_lines(file_truth)
 
 
