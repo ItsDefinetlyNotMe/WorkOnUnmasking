@@ -11,9 +11,11 @@ def parse_command_line():
     return args.number, args.path
 
 def count_lines(filename):
-    with open(filename, 'rb') as f:
-        line_count = sum(1 for _ in f)
-    return line_count
+        line_count = 0
+        with open(filename, 'r') as file:
+            for line in file:
+                line_count += 1
+        return line_count
 
 def select_specific_lines(input_filename, line_numbers):
     texts_from_lines = []
@@ -39,6 +41,7 @@ if samplesize > line_count:
 else:
     random_lines = random.sample(range(1, line_count + 1), samplesize)
     random_lines.sort()
+
     lines_base = select_specific_lines(file_base, random_lines)
     lines_truth = select_specific_lines(file_truth, random_lines)
 
