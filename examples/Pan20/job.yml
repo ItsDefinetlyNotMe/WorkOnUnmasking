@@ -46,17 +46,17 @@ job%:
         - name: onPairGenerated
         - name: onUnmaskingFinished
 
-    - name: output.formats.UnmaskingCurvePlotter
-      rc_file: etc/plot_rc.yml
-      parameters:
-        # Show live plot
-        # WARNING: For performance reasons, this should be removed or set to false in production!
-        display: true
+    #- name: output.formats.UnmaskingCurvePlotter
+    #  rc_file: etc/plot_rc.yml
+    #  parameters:
+    #    # Show live plot
+    #    # WARNING: For performance reasons, this should be removed or set to false in production!
+    #    display: true
 
         # Set fixed xlim values since we know how many curve points we'll be getting
-        xlim: [0, 23]
-      events:
-        - name: onUnmaskingRoundFinished
+    #    xlim: [0, 23]
+    #  events:
+    #    - name: onUnmaskingRoundFinished
 
     - name: output.formats.ProgressBar
       events:
@@ -79,9 +79,9 @@ job%:
           - name: onPairGenerated
 
       # Visualize aggregated curves
-      - name: output.aggregators.AggregatedCurvePlotter
-        rc_file: plot_rc.yml
-        parameters:
-          display: false
-        events:
-          - name: onJobFinished
+    #  - name: output.aggregators.AggregatedCurvePlotter #theoretisch svg rausnehmen und nur png
+    #    rc_file: plot_rc.yml
+    #    parameters:
+    #      display: false
+    #    events:
+    #      - name: onJobFinished
