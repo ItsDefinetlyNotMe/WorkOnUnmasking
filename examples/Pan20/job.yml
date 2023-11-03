@@ -18,16 +18,16 @@ job%:
     # Chunker for creating chunks from input texts
     chunker:
       # Option 1: split on sentences (long texts only, slower)
-#      name: input.chunkers.SentenceChunker
-#      parameters:
-#        chunk_size: $chunk_size
-#        language: "english"
+      name: input.chunkers.SentenceChunker
+      parameters:
+        chunk_size: $chunk_size
+        language: "english"
 
       # Option 2: sample chunks randomly (long and short texts, much faster)
-      name: input.chunkers.RandomWordTokenChunker
-      parameters:
-        chunk_size: 700
-        num_chunks: 30
+      #name: input.chunkers.RandomWordTokenChunker
+      #parameters:
+      #  chunk_size: 700
+      #  num_chunks: 30
 
   exec%.strategy%:
     parameters%:
@@ -66,10 +66,10 @@ job%:
     configurations:
       # Perform and aggregate two runs, one with a chunk size of
       # 500 and one with a chunk size of 600
-      chunk_size: [500, 600]
+      chunk_size: [600]
 
     # Repeat each configuration three times
-    repetitions: 2
+    repetitions: 1
 
     aggregators:
       # Aggregate curves by averaging them
