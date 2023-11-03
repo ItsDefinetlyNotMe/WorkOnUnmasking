@@ -69,7 +69,7 @@ job%:
       chunk_size: [600]
 
     # Repeat each configuration three times
-    repetitions: 1
+    repetitions: 2
 
     aggregators:
       # Aggregate curves by averaging them
